@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{411A7512-37F5-4349-B1CE-63F32AE22D2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A6BE01B4-E836-4B1B-A1C3-B2B2DADFBB9A}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DRSK_Int_DirectorsMeeting_Core_2016.UI", "src\DRSK_Int_DirectorsMeeting_Core_2016\DRSK_Int_DirectorsMeeting_Core_2016.UI.xproj", "{81E6FB6D-D80C-4343-ACBE-2E1EF40D774F}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DRSK_Int_DirectorsMeeting_Core_2016.Domain", "src\DRSK_Int_DirectorsMeeting_Core_2016.Domain\DRSK_Int_DirectorsMeeting_Core_2016.Domain.xproj", "{894A7C11-E6E2-49B7-B418-684D9E33048B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81E6FB6D-D80C-4343-ACBE-2E1EF40D774F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81E6FB6D-D80C-4343-ACBE-2E1EF40D774F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81E6FB6D-D80C-4343-ACBE-2E1EF40D774F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81E6FB6D-D80C-4343-ACBE-2E1EF40D774F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{894A7C11-E6E2-49B7-B418-684D9E33048B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{894A7C11-E6E2-49B7-B418-684D9E33048B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{894A7C11-E6E2-49B7-B418-684D9E33048B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{894A7C11-E6E2-49B7-B418-684D9E33048B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{81E6FB6D-D80C-4343-ACBE-2E1EF40D774F} = {411A7512-37F5-4349-B1CE-63F32AE22D2D}
+		{894A7C11-E6E2-49B7-B418-684D9E33048B} = {411A7512-37F5-4349-B1CE-63F32AE22D2D}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://ddsm-tfs.digdes.com:8080/tfs/tfs_drsk
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = src\\DRSK_Int_DirectorsMeeting_Core_2016.Domain\\DRSK_Int_DirectorsMeeting_Core_2016.Domain.xproj
+		SccProjectTopLevelParentUniqueName1 = DRSK_Int_DirectorsMeeting_Core_2016.sln
+		SccProjectName1 = src/DRSK_Int_DirectorsMeeting_Core_2016.Domain
+		SccLocalPath1 = src\\DRSK_Int_DirectorsMeeting_Core_2016.Domain
+		SccProjectUniqueName2 = src\\DRSK_Int_DirectorsMeeting_Core_2016\\DRSK_Int_DirectorsMeeting_Core_2016.UI.xproj
+		SccProjectTopLevelParentUniqueName2 = DRSK_Int_DirectorsMeeting_Core_2016.sln
+		SccProjectName2 = src/DRSK_Int_DirectorsMeeting_Core_2016
+		SccLocalPath2 = src\\DRSK_Int_DirectorsMeeting_Core_2016
+	EndGlobalSection
+EndGlobal

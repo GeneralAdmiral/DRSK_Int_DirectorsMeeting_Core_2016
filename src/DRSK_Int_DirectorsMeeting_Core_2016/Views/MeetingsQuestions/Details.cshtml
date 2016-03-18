@@ -1,0 +1,24 @@
+@model DRSK_Int_DirectorsMeeting_Core_2016.Domain.Entities.MeetingsQuestions
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MeetingsQuestions</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UpdDate)
+        </dd>
+    </dl>
+</div>
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</p>
