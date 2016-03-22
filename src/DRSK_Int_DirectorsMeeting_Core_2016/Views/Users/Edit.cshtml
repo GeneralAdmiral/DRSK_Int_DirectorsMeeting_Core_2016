@@ -1,0 +1,102 @@
+@model DRSK_Int_DirectorsMeeting_Core_2016.Domain.Entities.Users
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Users</h4>
+        <hr />
+        <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label asp-for="AdName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AdName" class="form-control" />
+                <span asp-validation-for="AdName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Division" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Division" class="form-control" />
+                <span asp-validation-for="Division" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Email" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Image" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="IsBlocked" />
+                    <label asp-for="IsBlocked"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Name" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Position" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Position" class="form-control" />
+                <span asp-validation-for="Position" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="RegisterDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="RegisterDate" class="form-control" />
+                <span asp-validation-for="RegisterDate" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Sid" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Sid" class="form-control" />
+                <span asp-validation-for="Sid" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="UpdateDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="UpdateDate" class="form-control" />
+                <span asp-validation-for="UpdateDate" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

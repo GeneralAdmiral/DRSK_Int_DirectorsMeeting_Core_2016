@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.Entity.ChangeTracking;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,11 @@ namespace DRSK_Int_DirectorsMeeting_Core_2016.Domain.Abstracts
 {
     public interface IRepository<TEntity> : IDisposable, IQueryable<TEntity>, IEnumerable<TEntity> where TEntity : IEntity
     {
+        EntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
+
         Task<TEntity> GetAsync(long entryId);
+
+        Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> predicat);
 
         TEntity Get(long entryId);
 
@@ -32,5 +37,7 @@ namespace DRSK_Int_DirectorsMeeting_Core_2016.Domain.Abstracts
         int Delete(TEntity entry);
 
         Task<int> DeleteAsync(TEntity entry);
+
+        Task<int> SaveChangesAsync();
     }
 }

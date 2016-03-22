@@ -1,4 +1,4 @@
-﻿{
+{
   "userSecretsId": "aspnet5-DRSK_Int_DirectorsMeeting_Core_2016-c0efbeec-e054-46c7-b621-d528475f17d8",
   "version": "1.0.0-*",
   "compilationOptions": {
@@ -6,6 +6,7 @@
   },
 
   "dependencies": {
+    "angularjs": "1.5.2",
     "DRSK_Int_DirectorsMeeting_Core_2016.Domain": "1.0.0-*",
     "EntityFramework.Commands": "7.0.0-rc1-final",
     "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
@@ -35,7 +36,10 @@
   },
 
   "frameworks": {
-    "dnx451": { },
+    "dnx451": {
+      "dependencies": {
+      }
+    },
     "dnxcore50": { }
   },
 

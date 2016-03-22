@@ -1,61 +1,123 @@
-using System.Collections.Generic;
 using System.Linq;
-using Microsoft.AspNet.Mvc;
-using DRSK_Int_DirectorsMeeting_Core_2016.Domain.Entities;
-using DRSK_Int_DirectorsMeeting_Core_2016.Domain.Abstracts;
-using DRSK_Int_DirectorsMeeting_Core_2016.Domain.Concretes;
 using System.Threading.Tasks;
-using System;
+using Microsoft.AspNet.Mvc;
+using Microsoft.AspNet.Mvc.Rendering;
+using Microsoft.Data.Entity;
+using DRSK_Int_DirectorsMeeting_Core_2016.Domain.Concretes;
+using DRSK_Int_DirectorsMeeting_Core_2016.Domain.Entities;
 
 namespace DRSK_Int_DirectorsMeeting_Core_2016.Controllers
 {
-    [Produces("application/json")]
-    [Route("api/Users")]
     public class UsersController : Controller
     {
-        private IRepository<Users> _context;
+        private FosAgroContext _context;
 
-        public UsersController(IRepository<Users> context)
+        public UsersController(FosAgroContext context)
         {
-            this._context = context;
+            _context = context;    
         }
 
-        // GET: api/Users
-        [HttpGet]
-        public void GetUsers()
+        // GET: Users
+        public async Task<IActionResult> Index()
         {
-            try
-            {
-                var user = new Users() {
-                    AdName = "AdNameForTest",
-                    Name = "NameForTest",
-                    Sid = "SidForTest",
-                    UpdateDate = DateTime.Now,
-                    RegisterDate = DateTime.Now };
-
-                var result = this._context.Add(user);
-                this.Redirect("/MeetingsQuestions/Index");
-            }
-            catch (Exception ex)
-            {
-
-            }
-
+            string sid = null;
+            return View(await _context.Users.ToListAsync());
         }
 
-        protected override void Dispose(bool disposing)
+        // GET: Users/Details/5
+        public async Task<IActionResult> Details(long? id)
         {
-            if (disposing)
+            if (id == null)
             {
-                _context.Dispose();
+                return HttpNotFound();
             }
 
-            base.Dispose(disposing);
+            Users users = await _context.Users.SingleAsync(m => m.Id == id);
+            if (users == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(users);
         }
 
-        private bool UsersExists(int id)
+        // GET: Users/Create
+        public IActionResult Create()
         {
-            return _context.Count(e => e.Id == id) > 0;
+            return View();
+        }
+
+        // POST: Users/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Users users)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Users.Add(users);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(users);
+        }
+
+        // GET: Users/Edit/5
+        public async Task<IActionResult> Edit(long? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
+            Users users = await _context.Users.SingleAsync(m => m.Id == id);
+            if (users == null)
+            {
+                return HttpNotFound();
+            }
+            return View(users);
+        }
+
+        // POST: Users/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(Users users)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Update(users);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(users);
+        }
+
+        // GET: Users/Delete/5
+        [ActionName("Delete")]
+        public async Task<IActionResult> Delete(long? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
+            Users users = await _context.Users.SingleAsync(m => m.Id == id);
+            if (users == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(users);
+        }
+
+        // POST: Users/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(long id)
+        {
+            Users users = await _context.Users.SingleAsync(m => m.Id == id);
+            _context.Users.Remove(users);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
     }
 }

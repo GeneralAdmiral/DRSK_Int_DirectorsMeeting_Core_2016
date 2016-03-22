@@ -1,0 +1,72 @@
+﻿<div ng-controller="userCtrl" ng-init="getFirstLoadUsersInfo()">
+
+    <form name="addUserForm">
+        <table>
+            <tr>
+                <td>
+                    <label>ФИО</label>
+                </td>
+
+                <td>
+                    <input type="text" ng-model="userFIO" required ng-trim="true">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>Предприятия группы "ФосАгро"</label>
+                </td>
+
+                <td>
+                    <input type="text" ng-model="usrDepartments" required ng-trim="true">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>Коллегиальный орган</label>
+                </td>
+
+                <td>
+                    <input type="text" ng-model="usrCollegials" required ng-trim="true">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>Телефон</label>
+                </td>
+
+                <td>
+                    <input type="text" ng-model="usrPhone" required ng-trim="true">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>Электронная почта</label>
+                </td>
+
+                <td>
+                    <input type="text" ng-model="usrEmail" required ng-trim="true">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label>Язык приложения</label>
+                </td>
+
+                <td>
+                    <input type="checkbox" ng-model="appLang" required ng-trim="true">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button ng-click="postNewUserData">Добавить</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

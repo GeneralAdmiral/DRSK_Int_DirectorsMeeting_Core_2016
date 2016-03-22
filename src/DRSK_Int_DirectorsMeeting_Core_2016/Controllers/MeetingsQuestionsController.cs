@@ -103,14 +103,16 @@ namespace DRSK_Int_DirectorsMeeting_Core_2016.Controllers
         }
 
         // GET: MeetingsQuestions/Edit/5
-        public IActionResult Edit(long id = 0)
+        public async Task<IActionResult> Edit(long id = 0)
         {
             if (id < 0)
             {
                 return HttpNotFound();
             }
 
-            MeetingsQuestions meetingsQuestions = this._context.Get(id);
+            //MeetingsQuestions meetingsQuestions = this._context.Get(id);
+            MeetingsQuestions meetingsQuestions = await this._context.GetAsync(id);
+
             if (meetingsQuestions == null)
             {
                 return HttpNotFound();
@@ -131,9 +133,15 @@ namespace DRSK_Int_DirectorsMeeting_Core_2016.Controllers
             {
                 //_context.Update(meetingsQuestions);
                 //await _context.SaveChangesAsync();
+                try
+                {
+                    this._context.Update(meetingsQuestions);
+                    return RedirectToAction("Index");
+                }
+                catch(Exception ex)
+                {
 
-                this._context.Update(meetingsQuestions);
-                return RedirectToAction("Index");
+                }
             }
             //ViewData["DirectorsGroupId"] = new SelectList(_context.DictDirectorsGroups, "Id", "DirectorsGroup", meetingsQuestions.DirectorsGroupId);
             //ViewData["MeetingId"] = new SelectList(_context.Meetings, "Id", "Meeting", meetingsQuestions.MeetingId);
